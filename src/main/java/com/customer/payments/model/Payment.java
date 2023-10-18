@@ -13,10 +13,10 @@ public class Payment {
     @Column(name = "policyId")
     private Long policyId;
     @Column(name = "amount")
-    private double amount;
+    private int amount;
     @Column(name = "payment-status"/*, columnDefinition = "SUCCESSFUL"*/)
     private PaymentStatus paymentStatus;
-    @Column(name = "street")
+    @Column(name = "paymentDate")
     private String paymentDate;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "card_id")
@@ -26,7 +26,7 @@ public class Payment {
 
     }
 
-    public Payment(Long policyId, double amount, PaymentStatus paymentStatus, String paymentDate, Card card) {
+    public Payment(Long policyId, int amount, PaymentStatus paymentStatus, String paymentDate, Card card) {
         this.policyId = policyId;
         this.amount = amount;
         this.paymentStatus = paymentStatus;

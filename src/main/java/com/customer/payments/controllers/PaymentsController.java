@@ -4,15 +4,15 @@ import com.customer.payments.model.Payment;
 import com.customer.payments.model.PaymentStatus;
 import com.customer.payments.model.PaymentStatusConverter;
 import com.customer.payments.services.PaymentsService;
-import com.mysql.cj.util.StringUtils;
+import com.stripe.exception.StripeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/payments")
 public class PaymentsController {

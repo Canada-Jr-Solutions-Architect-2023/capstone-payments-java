@@ -1,46 +1,45 @@
 package com.customer.payments.tests.testUtils;
 
-import com.information.customer.model.Customer;
+import com.customer.payments.model.Payment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerList {
-    private String firstName;
-    private String lastName;
-    private List<Customer> customerList;
+public class PaymentList {
+    private String creditCardHolderName;
+    private String debitCardHolderName;
+    private List<Payment> paymentList;
 
-    public CustomerList() {
-        customerList = new ArrayList<Customer>();
+    public String getCreditCardHolderName() {
+        return creditCardHolderName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setCreditCardHolderName(String creditCardHolderName) {
+        this.creditCardHolderName = creditCardHolderName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getDebitCardHolderName() {
+        return debitCardHolderName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setDebitCardHolderName(String debitCardHolderName) {
+        this.debitCardHolderName = debitCardHolderName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public PaymentList() {
+        paymentList = new ArrayList<Payment>();
     }
 
-    public List<Customer> getCustomerlist() {
-        return customerList;
+    public List<Payment> getPaymentlist() {
+        return paymentList;
     }
 
-    public void addCustomer(Customer customer) {
-        customerList.add(customer);
+    public void addPayment(Payment payment) {
+        paymentList.add(payment);
     }
 
-    public void removeCustomer(Customer customer) {
-        customerList.remove(customer);
+    public void removePayment(Payment payment) {
+        paymentList.remove(payment);
     }
-
 
 }
