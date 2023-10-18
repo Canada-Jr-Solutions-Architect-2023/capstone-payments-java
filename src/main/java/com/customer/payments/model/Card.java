@@ -23,10 +23,15 @@ public class Card {
     private int debitCvv;
 
     //credit card details
+    @Column(name = "creditCardHolderName")
     private String creditCardHolderName;
+    @Column(name = "creditCardNumber")
     private String creditCardNumber;
+    @Column(name = "creditExpirationMonth")
     private int creditExpirationMonth;
+    @Column(name = "creditExpirationYear")
     private int creditExpirationYear;
+    @Column(name = "creditCvv")
     private int creditCvv;
 
     public Card() {

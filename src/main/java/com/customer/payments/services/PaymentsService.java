@@ -2,11 +2,8 @@ package com.customer.payments.services;
 
 import com.customer.payments.model.Payment;
 import com.customer.payments.model.PaymentStatus;
-import com.customer.payments.model.PaymentStatusConverter;
 import com.customer.payments.repositories.PaymentsRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 
 import java.util.List;
 
