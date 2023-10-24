@@ -14,6 +14,8 @@ public class Payment {
     private Long policyId;
     @Column(name = "amount")
     private int amount;
+    @Convert(converter = StatusConverter.class)
+    @Enumerated(EnumType.STRING)
     @Column(name = "payment-status"/*, columnDefinition = "SUCCESSFUL"*/)
     private PaymentStatus paymentStatus;
     @Column(name = "paymentDate")
