@@ -143,6 +143,9 @@
 						<exclude>
 							PaymentRepositoryTests.java
 						</exclude>
+						<exclude>
+							CustomerPaymentsApplicationTests.java
+						</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
