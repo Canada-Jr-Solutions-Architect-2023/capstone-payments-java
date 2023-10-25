@@ -15,6 +15,5 @@ phases:
       - echo completed on date...
 artifacts:
   files:
-    - target/classes/**.*
     - target/customer-payments-0.0.1-SNAPSHOT.jar
-  discard-paths: no
+  discard-paths: yes
