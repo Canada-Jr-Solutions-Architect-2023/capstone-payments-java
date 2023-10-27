@@ -32,6 +32,8 @@ public class OAuth2ResourceServerSecurityConfiguration {
                 .csrf(Customizer.withDefaults())
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/payments/allPayments").anonymous()
+                        .requestMatchers("/checkout").anonymous()
+                        .requestMatchers("/charge").anonymous()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer((oauth2ResourceServer) ->

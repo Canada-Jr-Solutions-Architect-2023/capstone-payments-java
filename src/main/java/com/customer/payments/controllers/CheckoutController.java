@@ -15,9 +15,10 @@ public class CheckoutController {
     private String stripePublicKey/*= System.getenv("STRIPE_PUBLIC_KEY")*/;
     @Autowired
     private FeignServiceUtil feignServiceUtil;
+
     @RequestMapping("/checkout")
     public String checkout(Model model) {
-        model.addAttribute("amount", 5/*feignServiceUtil.getPremiumForPayment()*/); // in cents
+        model.addAttribute("amount", 5*100 /*feignServiceUtil.getPremiumForPayment()*/); // in cents
         model.addAttribute("stripePublicKey", stripePublicKey);
         model.addAttribute("currency", ChargeRequest.Currency.CAD);
         return "checkout";
