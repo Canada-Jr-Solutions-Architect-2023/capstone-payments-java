@@ -2,7 +2,6 @@ package com.customer.payments.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -29,11 +28,13 @@ public class OAuth2ResourceServerSecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(Customizer.withDefaults())
+                .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/payments/allPayments").anonymous()
                         .requestMatchers("/checkout").anonymous()
                         .requestMatchers("/charge").anonymous()
+                        .requestMatchers("/error").anonymous()
+                        .requestMatchers("/favicon.ico").anonymous()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer((oauth2ResourceServer) ->

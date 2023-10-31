@@ -130,6 +130,12 @@
 			<artifactId>aws-java-sdk-s3</artifactId>
 			<version>1.12.566</version>
 		</dependency>
+		<dependency>
+			<groupId>com.c4-soft.springaddons</groupId>
+			<artifactId>spring-addons-oauth2-test</artifactId>
+			<version>7.1.10</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

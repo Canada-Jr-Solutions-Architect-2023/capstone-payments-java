@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CheckoutController {
 
     @Value("${STRIPE_PUBLIC_KEY}")
-    private String stripePublicKey/*= System.getenv("STRIPE_PUBLIC_KEY")*/;
+    private String stripePublicKey;
     @Autowired
     private FeignServiceUtil feignServiceUtil;
 
     @RequestMapping("/checkout")
     public String checkout(Model model) {
-        model.addAttribute("amount", 5*100 /*feignServiceUtil.getPremiumForPayment()*/); // in cents
+        model.addAttribute("amount", feignServiceUtil.getPremiumForPayment().intValue()); // in cents
         model.addAttribute("stripePublicKey", stripePublicKey);
-        model.addAttribute("currency", ChargeRequest.Currency.CAD);
+        model.addAttribute("currency", ChargeRequest.Currency.EUR);
         return "checkout";
     }
 }
