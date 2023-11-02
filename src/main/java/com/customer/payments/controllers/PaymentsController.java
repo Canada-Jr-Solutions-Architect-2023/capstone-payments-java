@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 @RestController
 @RequestMapping("/payments")
@@ -21,7 +22,6 @@ public class PaymentsController {
     public PaymentsController(PaymentsService paymentService) {
         this.paymentsService = paymentsService;
     }
-
     @GetMapping("/allPayments")
     public List<Payment> getAllPayments() {
         return this.paymentsService.getAllPayments();
