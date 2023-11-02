@@ -12,7 +12,6 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.List;
 
@@ -29,7 +28,7 @@ public class PaymentIntegrationTests {
     @Test
     public void postPayment() {
         Payment payment = PaymentListUtility.getPaymentlist().get(0);
-        ResponseEntity<Payment> response = restTemplate.postForEntity("/payments/addPayment",
+        ResponseEntity<Payment> response = restTemplate.withBasicAuth("test","test").postForEntity("/payments/addPayment",
                 payment, Payment.class);
         Payment savedPayment = response.getBody();
         assertAll("Payment Posted",
