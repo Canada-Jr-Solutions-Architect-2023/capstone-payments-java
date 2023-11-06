@@ -28,7 +28,7 @@ public class FeignController {
         HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
         headers.add("Authorization","Bearer "+ principal.getTokenValue());*/
         headers =  principal.getTokenValue();
-        return feignServiceUtil.getPremiumForPayment();
+        return feignServiceUtil.getPremiumForPayment(headers);
     }
 
 }
