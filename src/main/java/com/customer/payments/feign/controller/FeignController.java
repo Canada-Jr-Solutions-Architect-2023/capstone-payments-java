@@ -21,12 +21,13 @@ public class FeignController {
     private FeignServiceUtil feignServiceUtil;
 
     @GetMapping("/policy/getPremiumForPayment/5")
-    public Double getPremiumForPayment(@RequestHeader(value = "Authorization", required = true) HttpHeaders headers){
+    public Double getPremiumForPayment(@RequestHeader(value = "Authorization", required = true) String headers){
         Jwt principal = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        RestTemplate restTemplate = new RestTemplate();
-        /*HttpHeaders*/ headers = new HttpHeaders();
+        /*RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
         HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
-        headers.add("Authorization","Bearer "+ principal.getTokenValue());
+        headers.add("Authorization","Bearer "+ principal.getTokenValue());*/
+        headers =  principal.getTokenValue();
         return feignServiceUtil.getPremiumForPayment();
     }
 
