@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name="feign", url="https://carehub-quotes.ee-cognizantacademy.com/api")
 public interface FeignServiceUtil {
-    @GetMapping("/policy/getPremiumForPayment/5")
+    @GetMapping("/policy/getPremiumForPayment/2")
     public Double getPremiumForPayment();
 
     @PutMapping("/policy/updatePaymentStatus")
